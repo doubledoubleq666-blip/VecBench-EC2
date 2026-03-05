@@ -1,0 +1,22 @@
+# Python
+venv/
+__pycache__/
+*.pyc
+.env
+
+# Data (too large for git)
+sift1m_data/
+data/raw/
+data/processed/*.npy
+
+# Results (generated)
+bench/results/*.csv
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+.vscode/
+*.iml
