@@ -9,9 +9,6 @@ sift1m_data/
 data/raw/
 data/processed/*.npy
 
-# Results (generated)
-bench/results/*.csv
-
 # OS
 .DS_Store
 Thumbs.db
