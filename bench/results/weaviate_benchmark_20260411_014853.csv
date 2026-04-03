@@ -1,0 +1,4 @@
+timestamp,db,dataset_size,round,vector_count,query_count,insert_time_sec,insert_qps,query_total_time_sec,query_avg_latency_sec,query_qps,top_k
+2026-04-11 01:48:33,weaviate,10K,1,10000,1000,4.0756,2453.64,3.3312,0.003331,300.19,10
+2026-04-11 01:48:42,weaviate,10K,2,10000,1000,4.0978,2440.35,3.3595,0.00336,297.66,10
+2026-04-11 01:48:52,weaviate,10K,3,10000,1000,4.0431,2473.37,3.341,0.003341,299.31,10

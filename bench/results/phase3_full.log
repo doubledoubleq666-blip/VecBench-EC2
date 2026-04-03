@@ -1,0 +1,361 @@
+Phase 3 started at Sat Apr 11 02:01:17 UTC 2026
+
+============================================
+Starting milvus at Sat Apr 11 02:01:17 UTC 2026
+============================================
+ Container milvus-minio Running 
+ Container milvus-etcd Running 
+ Container milvus-standalone Running 
+ Container milvus-etcd Waiting 
+ Container milvus-minio Waiting 
+ Container milvus-etcd Healthy 
+ Container milvus-minio Healthy 
+Waiting for milvus to be ready...
+
+>>> milvus | 10K | Sat Apr 11 02:01:47 UTC 2026
+Loading vectors from data/processed/sift_10k.npy ...
+  Loaded 10000 vectors
+Loading queries from data/processed/queries.npy ...
+  Using 100 queries (from 1000 available)
+Concurrency levels: [1, 4, 8, 16]
+
+===== Benchmark milvus | scale: 10K | concurrency: [1, 4, 8, 16] =====
+
+--- Round 1/3 ---
+  Insert: 6.25s | 1599 vec/s
+  Query (threads=1): avg=288.8ms p50=200.7ms p95=400.7ms p99=401.4ms QPS=3
+  Query (threads=4): avg=331.7ms p50=398.8ms p95=402.0ms p99=403.9ms QPS=246
+  Query (threads=8): avg=247.6ms p50=202.3ms p95=400.2ms p99=403.3ms QPS=248
+  Query (threads=16): avg=247.1ms p50=201.4ms p95=401.0ms p99=404.8ms QPS=244
+
+--- Round 2/3 ---
+  Insert: 6.74s | 1485 vec/s
+  Query (threads=1): avg=277.2ms p50=200.5ms p95=400.8ms p99=401.5ms QPS=4
+  Query (threads=4): avg=275.9ms p50=202.2ms p95=401.8ms p99=403.8ms QPS=247
+  Query (threads=8): avg=327.7ms p50=397.0ms p95=406.0ms p99=407.9ms QPS=245
+  Query (threads=16): avg=287.3ms p50=295.3ms p95=404.1ms p99=408.9ms QPS=244
+
+--- Round 3/3 ---
+  Insert: 6.95s | 1439 vec/s
+  Query (threads=1): avg=316.9ms p50=399.4ms p95=400.7ms p99=401.9ms QPS=3
+  Query (threads=4): avg=283.9ms p50=202.6ms p95=402.7ms p99=404.5ms QPS=245
+  Query (threads=8): avg=327.8ms p50=397.7ms p95=404.5ms p99=406.3ms QPS=246
+  Query (threads=16): avg=311.2ms p50=304.3ms p95=404.2ms p99=406.8ms QPS=245
+
+  Done: milvus
+  Saved: results/milvus_benchmark_20260411_020432.csv
+
+All benchmarks completed!
+
+>>> milvus | 100K | Sat Apr 11 02:04:32 UTC 2026
+Loading vectors from data/processed/sift_100k.npy ...
+  Loaded 100000 vectors
+Loading queries from data/processed/queries.npy ...
+  Using 100 queries (from 1000 available)
+Concurrency levels: [1, 4, 8, 16]
+
+===== Benchmark milvus | scale: 100K | concurrency: [1, 4, 8, 16] =====
+
+--- Round 1/3 ---
+  Insert: 7.78s | 12849 vec/s
+  Query (threads=1): avg=285.0ms p50=200.8ms p95=400.9ms p99=401.1ms QPS=4
+  Query (threads=4): avg=300.1ms p50=307.6ms p95=405.7ms p99=408.6ms QPS=245
+  Query (threads=8): avg=280.1ms p50=219.7ms p95=415.6ms p99=425.4ms QPS=235
+  Query (threads=16): avg=347.6ms p50=369.4ms p95=453.2ms p99=461.3ms QPS=212
+
+--- Round 2/3 ---
+  Insert: 7.85s | 12738 vec/s
+  Query (threads=1): avg=289.9ms p50=200.8ms p95=400.8ms p99=401.4ms QPS=3
+  Query (threads=4): avg=300.0ms p50=305.4ms p95=407.3ms p99=413.9ms QPS=241
+  Query (threads=8): avg=312.1ms p50=376.4ms p95=414.3ms p99=425.5ms QPS=234
+  Query (threads=16): avg=273.6ms p50=257.7ms p95=403.9ms p99=417.4ms QPS=235
+
+--- Round 3/3 ---
+  Insert: 8.74s | 11443 vec/s
+  Query (threads=1): avg=300.4ms p50=320.2ms p95=400.7ms p99=401.0ms QPS=3
+  Query (threads=4): avg=292.1ms p50=210.0ms p95=408.3ms p99=411.4ms QPS=241
+  Query (threads=8): avg=288.2ms p50=224.0ms p95=417.8ms p99=431.2ms QPS=231
+  Query (threads=16): avg=323.6ms p50=348.3ms p95=449.3ms p99=457.2ms QPS=218
+
+  Done: milvus
+  Saved: results/milvus_benchmark_20260411_020721.csv
+
+All benchmarks completed!
+
+>>> milvus | 1M | Sat Apr 11 02:07:22 UTC 2026
+Loading vectors from data/processed/sift_1m.npy ...
+  Loaded 1000000 vectors
+Loading queries from data/processed/queries.npy ...
+  Using 100 queries (from 1000 available)
+Concurrency levels: [1, 4, 8, 16]
+
+===== Benchmark milvus | scale: 1M | concurrency: [1, 4, 8, 16] =====
+
+--- Round 1/3 ---
+  Insert: 27.97s | 35746 vec/s
+  Query (threads=1): avg=294.3ms p50=207.1ms p95=403.6ms p99=409.3ms QPS=3
+  Query (threads=4): avg=343.0ms p50=378.2ms p95=457.8ms p99=484.5ms QPS=204
+  Query (threads=8): avg=385.5ms p50=374.8ms p95=571.6ms p99=579.4ms QPS=158
+  Query (threads=16): avg=943.3ms p50=832.6ms p95=1405.0ms p99=1463.2ms QPS=59
+
+--- Round 2/3 ---
+  Insert: 28.30s | 35331 vec/s
+  Query (threads=1): avg=283.5ms p50=204.2ms p95=404.5ms p99=407.9ms QPS=4
+  Query (threads=4): avg=409.8ms p50=403.2ms p95=562.1ms p99=639.0ms QPS=145
+  Query (threads=8): avg=562.0ms p50=554.3ms p95=877.2ms p99=899.4ms QPS=111
+  Query (threads=16): avg=675.5ms p50=715.1ms p95=938.2ms p99=941.9ms QPS=106
+
+--- Round 3/3 ---
+  Insert: 28.55s | 35031 vec/s
+  Query (threads=1): avg=310.7ms p50=271.6ms p95=453.0ms p99=773.3ms QPS=3
+  Query (threads=4): avg=314.5ms p50=321.8ms p95=475.0ms p99=488.4ms QPS=191
+  Query (threads=8): avg=400.1ms p50=389.1ms p95=569.1ms p99=580.7ms QPS=160
+  Query (threads=16): avg=734.8ms p50=738.0ms p95=1322.8ms p99=1327.9ms QPS=75
+
+  Done: milvus
+  Saved: results/milvus_benchmark_20260411_021143.csv
+
+All benchmarks completed!
+ Container milvus-standalone Stopping 
+ Container milvus-standalone Stopped 
+ Container milvus-standalone Removing 
+ Container milvus-standalone Removed 
+ Container milvus-minio Stopping 
+ Container milvus-etcd Stopping 
+ Container milvus-etcd Stopped 
+ Container milvus-etcd Removing 
+ Container milvus-etcd Removed 
+ Container milvus-minio Stopped 
+ Container milvus-minio Removing 
+ Container milvus-minio Removed 
+ Network milvus_default Removing 
+ Network milvus_default Removed 
+milvus completed at Sat Apr 11 02:11:50 UTC 2026
+
+============================================
+Starting chroma at Sat Apr 11 02:11:50 UTC 2026
+============================================
+ Network chroma_default Creating 
+ Network chroma_default Created 
+ Container chroma Creating 
+ Container chroma Created 
+ Container chroma Starting 
+ Container chroma Started 
+Waiting for chroma to be ready...
+
+>>> chroma | 10K | Sat Apr 11 02:12:21 UTC 2026
+Loading vectors from data/processed/sift_10k.npy ...
+  Loaded 10000 vectors
+Loading queries from data/processed/queries.npy ...
+  Using 100 queries (from 1000 available)
+Concurrency levels: [1, 4, 8, 16]
+
+===== Benchmark chroma | scale: 10K | concurrency: [1, 4, 8, 16] =====
+
+--- Round 1/3 ---
+  Insert: 1.79s | 5598 vec/s
+  Query (threads=1): avg=3.7ms p50=3.5ms p95=3.9ms p99=4.4ms QPS=274
+  Query (threads=4): avg=9.1ms p50=8.7ms p95=10.9ms p99=15.7ms QPS=4753
+  Query (threads=8): avg=17.6ms p50=18.4ms p95=20.7ms p99=21.9ms QPS=4548
+  Query (threads=16): avg=35.2ms p50=37.0ms p95=43.9ms p99=55.4ms QPS=1633
+
+--- Round 2/3 ---
+  Insert: 1.73s | 5766 vec/s
+  Query (threads=1): avg=3.6ms p50=3.5ms p95=3.9ms p99=4.4ms QPS=278
+  Query (threads=4): avg=9.6ms p50=9.5ms p95=11.4ms p99=17.4ms QPS=5347
+  Query (threads=8): avg=19.8ms p50=20.1ms p95=22.2ms p99=23.7ms QPS=4094
+  Query (threads=16): avg=35.9ms p50=37.1ms p95=46.5ms p99=50.7ms QPS=1721
+
+--- Round 3/3 ---
+  Insert: 1.79s | 5581 vec/s
+  Query (threads=1): avg=3.6ms p50=3.6ms p95=3.9ms p99=4.6ms QPS=276
+  Query (threads=4): avg=10.1ms p50=10.1ms p95=13.9ms p99=17.0ms QPS=5826
+  Query (threads=8): avg=20.0ms p50=19.5ms p95=26.9ms p99=42.5ms QPS=2340
+  Query (threads=16): avg=38.7ms p50=39.0ms p95=57.9ms p99=71.0ms QPS=1353
+
+  Done: chroma
+  Saved: results/chroma_benchmark_20260411_021248.csv
+
+All benchmarks completed!
+
+>>> chroma | 100K | Sat Apr 11 02:12:49 UTC 2026
+Loading vectors from data/processed/sift_100k.npy ...
+  Loaded 100000 vectors
+Loading queries from data/processed/queries.npy ...
+  Using 100 queries (from 1000 available)
+Concurrency levels: [1, 4, 8, 16]
+
+===== Benchmark chroma | scale: 100K | concurrency: [1, 4, 8, 16] =====
+
+--- Round 1/3 ---
+  Insert: 25.78s | 3879 vec/s
+  Query (threads=1): avg=3.8ms p50=3.8ms p95=4.2ms p99=5.8ms QPS=260
+  Query (threads=4): avg=10.8ms p50=10.8ms p95=13.3ms p99=16.7ms QPS=5518
+  Query (threads=8): avg=20.8ms p50=21.3ms p95=25.0ms p99=27.4ms QPS=3491
+  Query (threads=16): avg=37.4ms p50=39.4ms p95=43.7ms p99=46.0ms QPS=2154
+
+--- Round 2/3 ---
+  Insert: 25.86s | 3867 vec/s
+  Query (threads=1): avg=3.7ms p50=3.7ms p95=4.2ms p99=4.7ms QPS=267
+  Query (threads=4): avg=10.6ms p50=10.5ms p95=13.8ms p99=17.2ms QPS=5113
+  Query (threads=8): avg=20.6ms p50=20.6ms p95=22.6ms p99=26.2ms QPS=3463
+  Query (threads=16): avg=38.1ms p50=39.9ms p95=44.6ms p99=49.4ms QPS=1872
+
+--- Round 3/3 ---
+  Insert: 25.73s | 3886 vec/s
+  Query (threads=1): avg=3.8ms p50=3.7ms p95=4.0ms p99=6.6ms QPS=265
+  Query (threads=4): avg=10.1ms p50=9.9ms p95=13.2ms p99=15.0ms QPS=5807
+  Query (threads=8): avg=20.5ms p50=20.6ms p95=24.1ms p99=26.0ms QPS=3810
+  Query (threads=16): avg=38.9ms p50=41.0ms p95=47.5ms p99=51.8ms QPS=1830
+
+  Done: chroma
+  Saved: results/chroma_benchmark_20260411_021429.csv
+
+All benchmarks completed!
+
+>>> chroma | 1M | Sat Apr 11 02:14:30 UTC 2026
+Loading vectors from data/processed/sift_1m.npy ...
+  Loaded 1000000 vectors
+Loading queries from data/processed/queries.npy ...
+  Using 100 queries (from 1000 available)
+Concurrency levels: [1, 4, 8, 16]
+
+===== Benchmark chroma | scale: 1M | concurrency: [1, 4, 8, 16] =====
+
+--- Round 1/3 ---
+  Insert: 1697.16s | 589 vec/s
+  Query (threads=1): avg=10.0ms p50=9.5ms p95=13.0ms p99=16.7ms QPS=100
+  Query (threads=4): avg=10.5ms p50=10.4ms p95=12.3ms p99=16.4ms QPS=5818
+  Query (threads=8): avg=21.3ms p50=21.9ms p95=25.3ms p99=30.8ms QPS=3190
+  Query (threads=16): scripts/run_phase3_all.sh: line 27:  9084 Killed                  python benchmark.py --db "$db" --dataset "$dataset" --scale "$scale" --threads "$THREADS" --repeat "$REPEAT" --num-queries 100 --output results
+WARN: chroma 1M failed, continuing...
+ Container chroma Stopping 
+ Container chroma Stopped 
+ Container chroma Removing 
+ Container chroma Removed 
+ Network chroma_default Removing 
+ Network chroma_default Removed 
+chroma completed at Sat Apr 11 03:59:41 UTC 2026
+
+============================================
+Starting weaviate at Sat Apr 11 03:59:41 UTC 2026
+============================================
+ Container weaviate Starting 
+ Container weaviate Started 
+Waiting for weaviate to be ready...
+
+>>> weaviate | 10K | Sat Apr 11 04:00:11 UTC 2026
+Loading vectors from data/processed/sift_10k.npy ...
+  Loaded 10000 vectors
+Loading queries from data/processed/queries.npy ...
+  Using 100 queries (from 1000 available)
+Concurrency levels: [1, 4, 8, 16]
+
+===== Benchmark weaviate | scale: 10K | concurrency: [1, 4, 8, 16] =====
+
+--- Round 1/3 ---
+  Insert: 4.15s | 2410 vec/s
+  Query (threads=1): avg=3.5ms p50=3.3ms p95=4.0ms p99=6.3ms QPS=287
+  Query (threads=4): avg=8.1ms p50=7.9ms p95=12.3ms p99=18.2ms QPS=3916
+  Query (threads=8): avg=16.3ms p50=11.7ms p95=34.6ms p99=68.6ms QPS=1391
+  Query (threads=16): avg=22.2ms p50=17.8ms p95=47.7ms p99=76.8ms QPS=1136
+
+--- Round 2/3 ---
+  Insert: 4.09s | 2447 vec/s
+  Query (threads=1): avg=3.4ms p50=3.3ms p95=4.2ms p99=6.1ms QPS=291
+  Query (threads=4): avg=9.2ms p50=7.9ms p95=17.4ms p99=26.0ms QPS=2783
+  Query (threads=8): avg=15.1ms p50=12.3ms p95=28.3ms p99=45.6ms QPS=1251
+  Query (threads=16): avg=25.5ms p50=17.0ms p95=85.9ms p99=118.8ms QPS=730
+
+--- Round 3/3 ---
+  Insert: 4.07s | 2456 vec/s
+  Query (threads=1): avg=3.3ms p50=3.3ms p95=3.6ms p99=4.0ms QPS=303
+  Query (threads=4): avg=8.9ms p50=7.8ms p95=16.3ms p99=30.3ms QPS=3220
+  Query (threads=8): avg=15.2ms p50=13.9ms p95=28.0ms p99=33.8ms QPS=2876
+  Query (threads=16): avg=25.0ms p50=21.2ms p95=55.2ms p99=72.9ms QPS=1323
+
+  Done: weaviate
+  Saved: results/weaviate_benchmark_20260411_040044.csv
+
+All benchmarks completed!
+
+>>> weaviate | 100K | Sat Apr 11 04:00:45 UTC 2026
+Loading vectors from data/processed/sift_100k.npy ...
+  Loaded 100000 vectors
+Loading queries from data/processed/queries.npy ...
+  Using 100 queries (from 1000 available)
+Concurrency levels: [1, 4, 8, 16]
+
+===== Benchmark weaviate | scale: 100K | concurrency: [1, 4, 8, 16] =====
+
+--- Round 1/3 ---
+  Insert: 58.00s | 1724 vec/s
+  Query (threads=1): avg=3.6ms p50=3.6ms p95=3.9ms p99=4.6ms QPS=277
+  Query (threads=4): avg=9.1ms p50=8.1ms p95=14.6ms p99=23.6ms QPS=3908
+  Query (threads=8): avg=21.2ms p50=18.4ms p95=41.9ms p99=98.7ms QPS=954
+  Query (threads=16): avg=24.9ms p50=20.2ms p95=59.7ms p99=64.3ms QPS=1353
+
+--- Round 2/3 ---
+  Insert: 57.96s | 1725 vec/s
+  Query (threads=1): avg=3.7ms p50=3.7ms p95=4.0ms p99=4.4ms QPS=273
+  Query (threads=4): avg=8.4ms p50=7.5ms p95=15.8ms p99=19.9ms QPS=5020
+  Query (threads=8): avg=19.9ms p50=14.8ms p95=43.5ms p99=86.5ms QPS=897
+  Query (threads=16): avg=24.6ms p50=18.6ms p95=79.2ms p99=113.2ms QPS=883
+
+--- Round 3/3 ---
+  Insert: 58.30s | 1715 vec/s
+  Query (threads=1): avg=3.6ms p50=3.6ms p95=4.0ms p99=4.3ms QPS=276
+  Query (threads=4): avg=8.5ms p50=7.8ms p95=15.2ms p99=19.1ms QPS=2481
+  Query (threads=8): avg=20.2ms p50=13.1ms p95=78.9ms p99=100.6ms QPS=991
+  Query (threads=16): avg=22.2ms p50=19.6ms p95=43.3ms p99=47.1ms QPS=1885
+
+  Done: weaviate
+  Saved: results/weaviate_benchmark_20260411_040400.csv
+
+All benchmarks completed!
+
+>>> weaviate | 1M | Sat Apr 11 04:04:01 UTC 2026
+[ERROR] Batch ReadTimeout Exception occurred! Retrying in 2s. [1/3]
+Loading vectors from data/processed/sift_1m.npy ...
+  Loaded 1000000 vectors
+Loading queries from data/processed/queries.npy ...
+  Using 100 queries (from 1000 available)
+Concurrency levels: [1, 4, 8, 16]
+
+===== Benchmark weaviate | scale: 1M | concurrency: [1, 4, 8, 16] =====
+
+--- Round 1/3 ---
+Traceback (most recent call last):
+  File "/home/ubuntu/vector-db-bench/benchmark.py", line 382, in <module>
+    runner.run_benchmark(
+  File "/home/ubuntu/vector-db-bench/benchmark.py", line 259, in run_benchmark
+    insert_time = self.db.insert(vectors)
+                  ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/vector-db-bench/benchmark.py", line 163, in insert
+    with self.client.batch as batch:
+  File "/home/ubuntu/vector-db-bench/venv/lib/python3.12/site-packages/weaviate/batch/crud_batch.py", line 1654, in __exit__
+scripts/run_phase3_all.sh: line 27: 10887 Killed                  python benchmark.py --db "$db" --dataset "$dataset" --scale "$scale" --threads "$THREADS" --repeat "$REPEAT" --num-queries 100 --output results
+WARN: weaviate 1M failed, continuing...
+ Container weaviate Stopping 
+ Container weaviate Stopped 
+ Container weaviate Removing 
+ Container weaviate Removed 
+ Network weaviate_default Removing 
+ Network weaviate_default Removed 
+weaviate completed at Sat Apr 11 05:02:01 UTC 2026
+
+
+Phase 3 completed at Sat Apr 11 05:02:01 UTC 2026
+Results:
+-rw-rw-r-- 1 ubuntu ubuntu  399 Apr 11 01:46 results/chroma_benchmark_20260411_014638.csv
+-rw-rw-r-- 1 ubuntu ubuntu 2.0K Apr 11 02:12 results/chroma_benchmark_20260411_021248.csv
+-rw-rw-r-- 1 ubuntu ubuntu 2.0K Apr 11 02:14 results/chroma_benchmark_20260411_021429.csv
+-rw-rw-r-- 1 ubuntu ubuntu  395 Apr 10 15:37 results/chroma_metrics_20260410_153754.csv
+-rw-rw-r-- 1 ubuntu ubuntu  398 Apr 10 14:30 results/milvus_benchmark_20260410_143059.csv
+-rw-rw-r-- 1 ubuntu ubuntu 2.1K Apr 11 02:04 results/milvus_benchmark_20260411_020432.csv
+-rw-rw-r-- 1 ubuntu ubuntu 2.1K Apr 11 02:07 results/milvus_benchmark_20260411_020721.csv
+-rw-rw-r-- 1 ubuntu ubuntu 2.1K Apr 11 02:11 results/milvus_benchmark_20260411_021143.csv
+-rw-rw-r-- 1 ubuntu ubuntu  402 Apr 11 01:48 results/weaviate_benchmark_20260411_014853.csv
+-rw-rw-r-- 1 ubuntu ubuntu 2.0K Apr 11 04:00 results/weaviate_benchmark_20260411_040044.csv
+-rw-rw-r-- 1 ubuntu ubuntu 2.1K Apr 11 04:04 results/weaviate_benchmark_20260411_040400.csv
+-rw-rw-r-- 1 ubuntu ubuntu  210 Apr 10 15:38 results/weaviate_metrics_20260410_153803.csv

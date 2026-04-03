@@ -1,0 +1,8 @@
+Loading vectors from data/processed/sift_10k.npy ...
+  Loaded 10000 vectors
+Loading queries from data/processed/queries.npy ...
+  Loaded 1000 queries
+
+===== 开始测试 weaviate | 规模: 10K =====
+
+第 1/3 轮实验

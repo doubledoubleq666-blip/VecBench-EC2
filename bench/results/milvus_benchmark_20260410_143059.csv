@@ -1,0 +1,4 @@
+timestamp,db,dataset_size,round,vector_count,query_count,insert_time_sec,insert_qps,query_total_time_sec,query_avg_latency_sec,query_qps,top_k
+2026-04-10 14:30:39,milvus,10K,1,10000,1000,6.5326,1530.77,0.6648,0.000665,1504.24,10
+2026-04-10 14:30:48,milvus,10K,2,10000,1000,6.3269,1580.56,0.6914,0.000691,1446.3,10
+2026-04-10 14:30:58,milvus,10K,3,10000,1000,7.3388,1362.62,0.5598,0.00056,1786.3,10

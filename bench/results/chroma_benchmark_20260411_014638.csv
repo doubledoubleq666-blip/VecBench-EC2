@@ -1,0 +1,4 @@
+timestamp,db,dataset_size,round,vector_count,query_count,insert_time_sec,insert_qps,query_total_time_sec,query_avg_latency_sec,query_qps,top_k
+2026-04-11 01:46:28,chroma,10K,1,10000,1000,1.8679,5353.74,0.2235,0.000223,4475.17,10
+2026-04-11 01:46:32,chroma,10K,2,10000,1000,1.7574,5690.2,0.2198,0.00022,4548.71,10
+2026-04-11 01:46:36,chroma,10K,3,10000,1000,1.8702,5347.15,0.2217,0.000222,4511.24,10
