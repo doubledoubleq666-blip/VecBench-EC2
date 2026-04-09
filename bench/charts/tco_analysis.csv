@@ -1,0 +1,5 @@
+Component,Monthly Cost (USD)
+EC2 (t2.large),$67.74
+EBS (30GB gp3),$2.40
+Data Transfer,$0.09
+Total,$70.23
