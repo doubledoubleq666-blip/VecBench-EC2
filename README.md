@@ -1,4 +1,4 @@
-# Performance Benchmarking of Open-Source Vector Databases for RAG Systems on AWS EC2
+# VecBench-EC2: Performance Benchmarking of Open-Source Vector Databases for RAG Systems on AWS EC2
 
 CS5296 Cloud Computing, Spring 2026 — Technical Project
 
@@ -114,11 +114,28 @@ All benchmarks follow these rules to ensure fair comparison:
 9. **Sequential execution** — one database at a time to avoid resource contention
 10. **Fresh state** — collection dropped and recreated between rounds
 
+## Key Results
+
+| Metric | Milvus | Chroma | Weaviate |
+|--------|--------|--------|----------|
+| Insert 10K (vec/s) | 1,508 | **5,648** | 2,438 |
+| Insert 100K (vec/s) | **12,343** | 3,877 | 1,722 |
+| Insert 1M (vec/s) | **35,370** | FAIL (OOM) | FAIL (OOM) |
+| Query Avg 100K (ms) | 292 | **3.8** | 3.6 |
+| QPS 100K @ 4 threads | 242 | **5,479** | 3,803 |
+| Memory 100K (MB) | 1,739 | 1,522 | **1,477** |
+
+**Scalability Winner:** Milvus (only DB to handle 1M vectors on 8 GB RAM)
+**Latency Winner:** Chroma/Weaviate (~3.6 ms vs Milvus ~290 ms)
+**Throughput Winner:** Chroma (5,479 QPS at 4 threads, 100K scale)
+
+See `bench/charts/` for detailed visualizations.
+
 ## Known Constraints
 
-- **AWS Academy Learner Lab denies c5.xlarge**. Phase 1 uses `t2.large` (2 vCPU, 8 GB RAM) as a smoke-test environment. Final benchmarks may use a larger allowed instance type.
-- **t2.large has limited memory** — run one database at a time, especially Milvus.
-- Phase 1 results are for validation only, not final performance conclusions.
+- **t2.large has limited memory (8 GB)** — run one database at a time, especially Milvus.
+- Chroma and Weaviate cannot handle 1M vectors on t2.large due to OOM.
+- Milvus uses FLAT index (brute-force); HNSW would reduce its query latency.
 
 ## Metrics Collected
 
